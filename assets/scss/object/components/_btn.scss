@@ -1,0 +1,39 @@
+@use "../../global" as g;
+
+.rel_btn {
+  font-family: g.$ff-sans;
+  font-weight: g.$fw-bd;
+  letter-spacing: 0.15em;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    margin-left: 6px;
+    border-radius: 20px;
+    background-image: url("../img/pc/icon_next.png");
+    background-size: 7px;
+    background-repeat: no-repeat;
+    background-position: 55% center;
+    vertical-align: sub;
+    background-color: g.$cr_txt_stg;
+    transition: 0.3s;
+  }
+
+  &:hover { 
+    color: g.$cr-m;
+    &::after { background-color: g.$cr-m;}
+  }
+  
+  @include g.forSp { 
+    font-size: 14px;
+
+    &::after {
+      width: 18px;
+      height: 18px;
+      margin-left: 6px;
+      background-size: 6px;
+    }
+  }
+}

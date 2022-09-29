@@ -1,0 +1,25 @@
+@use "../../global" as g;
+
+// PCの時だけ表示
+.pc{
+  display: block;
+	@media screen and ( max-width: 768px) {
+		display: none;
+	}
+}
+
+// タブレットサイズから表示
+.tab {
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}
+
+// SPの時だけ表示
+.sp{
+  display: none;
+	@media screen and ( max-width: 768px) {
+		display: block;
+	}
+}

@@ -1,0 +1,161 @@
+@use "../global" as g;
+
+.header {
+  display: flex;
+  height: 82px;
+  box-sizing: border-box;
+  background-color: g.$cr-b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1189px;
+  z-index: 9999;
+  transition: all 0.4s;
+
+  @include g.forSp { height: 50px;}
+
+  &_logo {
+    margin-left: 43px;
+    @include g.forSpTab { margin-left: 20px;}
+
+    img {
+      &:first-child { margin-top: 20px;}
+
+      &:nth-child(2) {
+        vertical-align: top;
+        margin-left: 13px;
+        margin-top: 30px;
+      }
+
+      @include g.forSp {
+        &:first-child {
+          width: 31px; 
+          height: 31px;
+          margin-top: 10px;
+        }
+
+        &:nth-child(2) {
+          margin-left: 8px;
+          margin-top: 17px;
+          width: 159px;
+          height: 17px;
+        }
+      }
+    }
+  }
+
+  .header_right {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    @include g.forSpTab { display: none;}
+
+    nav ul {
+      display: flex;
+      margin-right: 52px;
+
+      li {
+        font-size: 16px;
+        font-family: g.$ff-serif;
+        letter-spacing: 0.12em;
+        margin-right: 35px;
+       &:last-child {
+        margin-right: 0px;
+       }
+       a:hover { color: g.$cr-m;}
+      }
+    }
+  }
+
+  .reserve {
+    width: 134px;
+    height: 84px;
+    text-align: center;
+    display: table;
+    @include g.bg-grad(-31.5);
+
+    p {
+      font-size: 18px;
+      font-family: g.$ff-serif;
+      display: table-cell;
+      vertical-align: middle;
+      color: g.$cr-b;
+      letter-spacing: 0.12em;
+    }
+
+    &:hover { opacity: g.$opacity;}
+  }
+
+}
+
+.nav_toggle,
+.nav_toggle span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.nav_toggle {
+  width: 50px;
+  height: 50px;
+  @include g.bg-grad(-45);
+  cursor: pointer;
+  position: relative;
+  display: none !important;
+
+  @include g.forSpTab {
+    display: block !important;
+    margin-left: auto;
+  }
+
+  @include g.forTab { 
+    width: 82px; 
+    height: 82px;
+  }
+
+  span {
+    position: absolute;
+    left: 12.5px;
+    height: 2.5px;
+    background-color: g.$cr-b;
+    border-radius: 2px;
+    width: 25px;
+  
+    @include g.forTab {
+      left: 21px;
+      height: 3px;
+      width: 41px;
+    }
+
+    &:nth-of-type(1) { 
+      top: 14px;  
+      @include g.forTab { top: 25px;}
+    } 
+
+    &:nth-of-type(2) { 
+      top: 23px; 
+      opacity: 1;
+      @include g.forTab { top: 39px;}
+    }
+    
+    &:nth-of-type(3) { 
+      top: 32px; 
+      @include g.forTab { top: 53px;}
+    }
+  }
+
+  &.active span:nth-of-type(1) { 
+    animation: active-1 .75s forwards;
+    @include g.forTab { animation: active-1_tab .75s forwards;}
+  }
+  
+  &.active span:nth-of-type(2) { opacity: 0;}
+  
+  &.active span:nth-of-type(3) { 
+    animation: active-3 .75s forwards;
+    @include g.forTab { animation: active-3_tab .75s forwards;}
+  }
+}

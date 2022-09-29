@@ -1,0 +1,86 @@
+@use "../global" as g;
+
+// menu_icon-animation(header.scss)
+@keyframes active-1 {
+  0% { transform: translateY(0) rotate(0);}
+
+  50% { transform: translateY(9px) rotate(0);}
+
+  100% { transform: translateY(9px) rotate(45deg);}
+}
+@keyframes active-1_tab {
+  0% { transform: translateY(0) rotate(0);}
+
+  50% { transform: translateY(14px) rotate(0);}
+
+  100% { transform: translateY(14px) rotate(45deg);}
+}
+@keyframes active-3 {
+  0% { transform: translateY(0) rotate(0);}
+
+  50% { transform: translateY(-9px) rotate(0);}
+
+  100% { transform: translateY(-9px) rotate(-45deg);}
+}
+
+@keyframes active-3_tab {
+  0% { transform: translateY(0) rotate(0);}
+
+  50% { transform: translateY(-14px) rotate(0);}
+
+  100% { transform: translateY(-14px) rotate(-45deg);}
+}
+// menu_icon-animation(header.scss)
+
+// sp_nav-animation(global-nav.scss)
+@keyframes fadeUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// sp_nav-animation(global-nav.scss)
+
+// contents_animation(top-page.scss)
+
+// left
+@keyframes fadeLeftAnime{
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+// left
+// right
+  @keyframes fadeRightAnime{
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+// right
+// contents_animation(top-page.scss)

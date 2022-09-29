@@ -1,0 +1,22 @@
+@use "../global" as g;
+
+.footer {
+  padding: 18px 0;
+  text-align: center;
+  border-bottom: 5px solid g.$cr-m;
+  background-color: #eee;
+
+  p { font-weight: g.$fw-bd; letter-spacing: 0.13em;}
+
+  @include g.forSp {
+    box-sizing: border-box;
+    height: 50px;
+    padding: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-width: 3.5px;
+
+    p { font-size: 10px;}
+  }
+}

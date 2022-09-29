@@ -1,0 +1,16 @@
+@use "../global" as g;
+
+html { scroll-behavior: smooth;}
+
+body {
+  max-width: 1189px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: g.$cr-b;
+}
+
+a { 
+  color: g.$cr_txt; 
+  text-decoration: none; 
+  transition: 0.3s;
+}

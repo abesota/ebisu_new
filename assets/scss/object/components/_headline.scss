@@ -1,0 +1,16 @@
+@use "../../global" as g;
+
+h2 {
+  font-size: 26px;
+  color: g.$cr-m;
+  font-family: g.$ff-serif;
+  line-height: 1.72em;
+  letter-spacing: 0.15em;
+  text-align: center;
+  @include g.forSp {
+    font-size: 20px;
+    line-height: 1.5em;
+  }
+}
+
+h3 { font-weight: g.$fw-bd;}

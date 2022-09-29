@@ -1,0 +1,30 @@
+@use "variables" as v;
+
+// responsive
+@mixin forPc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin forSpTab {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin forTab {
+  @media screen and (min-width: 767px) and ( max-width: 1024px) {
+    @content;
+  }
+}
+@mixin forSp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+// responsive
+
+// gradation
+@mixin bg-grad($angle) {
+  background: linear-gradient($angle + deg, v.$cr-m 50%, v.$cr-m-dp 50%);
+}
+// gradation

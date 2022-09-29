@@ -1,0 +1,95 @@
+@use "../global" as g;
+
+.sp_nav {
+  position:fixed;
+  z-index: 999;
+  top:-120%;
+  left:0;
+  width:100%;
+  height: 420px;
+  background-color: g.$cr-b;
+  transition: all 1s;
+
+  @include g.forTab { height: 500px;}
+
+  ul {
+    display: block;
+    position: absolute;
+    width: calc(100% - 51px);
+    top:44.5%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    @include g.forTab { top: 49%;}
+
+    li {
+      font-size: 14px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      height: 50px;
+      box-sizing: border-box;
+      border-bottom: 2px dashed #eee;
+      font-family: g.$ff-serif;
+      text-align: center;
+      letter-spacing: 0.11em;
+
+      a:hover { color: g.$cr-m;}
+
+      @include g.forTab {
+        font-size: 16px;
+        height: 60px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+      }
+    }
+
+    & .is-animated { opacity: 0;}
+
+    .is-animated.active {
+      animation: fadeUp 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+      
+      &:first-child { animation-delay: 0.65s;}
+
+      &:nth-child(2) { animation-delay: 0.95s;}
+
+      &:nth-child(3) { animation-delay: 1.25s;}
+
+      &:last-child { animation-delay: 1.55s;}
+    }
+    
+  }
+
+  .reserve {
+    width: 270px;
+    height: 50px;
+    @include g.bg-grad(349.8);
+    text-align: center;
+    display: table;
+    position: absolute;
+    top:81%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    @include g.forTab { top: 85%;}
+
+    p {
+      font-size: 18px;
+      font-family: g.$ff-serif;
+      display: table-cell;
+      vertical-align: middle;
+      color: g.$cr-b;
+      letter-spacing: 0.12em;
+    }
+
+    &:hover { opacity: g.$opacity;}
+
+    &.is-animated { opacity: 0;}
+
+    &.is-animated.active {
+      animation: fadeIn 5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+      animation-delay: 1.85s;
+    }
+  }
+
+  &.panelactive{ top: 0px;}
+}

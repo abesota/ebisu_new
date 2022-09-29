@@ -1,0 +1,418 @@
+@use "../../global" as g;
+
+.contents_width {
+  width: 995px;
+  margin: 0 auto;
+  @include g.forSpTab { width: 100%;}
+}
+
+p {
+  font-size: 14px;
+  color: g.$cr_txt;
+  font-family: g.$ff-sans;
+  letter-spacing: 0.16em;
+  line-height: 1.75em;
+  @include g.forSp { font-size: 12px;}
+}
+
+.flex_item,
+.flex_item_2 { 
+  display: flex;
+
+  @include g.forTab { align-items: center;}
+
+  @include g.forSp {
+    display: block;
+    padding: 0 20px;
+    img { width: 100%; margin: 0 !important;}
+  }
+
+  .item_text {
+    padding-top: 31px;
+    @include g.forTab { padding-top: 0;}
+
+    h3 {
+      font-size: 22px;
+      color: g.$cr_txt_stg;
+      font-family: g.$ff-serif;
+      letter-spacing: 0.15em;
+      margin-bottom: 14px;
+    }
+
+    p { margin-bottom: 21px;}
+
+    @include g.forSp {
+      padding-top: 15.5px;
+      h3 { 
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 8px;
+      }
+
+      p { 
+        font-size: 13px;
+        line-height: 24px;
+        margin-bottom: 14px;
+      }
+    }
+  }  
+}
+
+.flex_item {
+  margin-bottom: 30px;
+
+  img { margin-right: 50px;}
+
+  @include g.forSp { margin-bottom: 40px;}
+}
+
+@include g.forSp {
+  .flex_item_2 {
+    display: flex;
+    flex-wrap: wrap; 
+  
+    .item_text { order: 1;}
+  }
+}
+
+.flex_item_2 img { 
+  margin-left: 50px;
+
+  @include g.forSp { margin-bottom: 3px !important;}
+}
+
+main { 
+  transition: all 0.4s;
+  margin-top: 82px;
+  @include g.forSpTab {
+    position: relative;
+    & > * { padding: 0 25px;}
+    & > .main_visual { padding: 0;} 
+    & > .service { padding-left: 0; padding-right: 0;} 
+  }
+  @include g.forSp { margin-top: 50px;}
+}
+
+//main_visual
+.kv img { width: 100%;}
+//main_visual
+
+// contents_animation
+  .fadeUpTrigger,
+  .fadeLeftTrigger,
+  .fadeRightTrigger { opacity: 0;}
+
+  // up
+    .fadeUpTrigger.fadeUP {
+      animation: fadeUp 1s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+      opacity:0;
+    }
+  // up
+  // left
+    .fadeLeft{
+      animation-name:fadeLeftAnime;
+      animation-duration: 1s;
+      animation-fill-mode:forwards;
+      opacity:0;
+    }
+  // left
+  // right
+    .fadeRight{
+      animation-name:fadeRightAnime;
+      animation-duration: 1s;
+      animation-fill-mode:forwards;
+      opacity:0;
+    }
+  // right
+// contents_animation
+
+// service
+.service {
+  padding-top: 52px;
+  padding-bottom: 66px;
+  text-align: center;
+  @include g.forSpTab {
+    .contents_text {
+      margin: 0 25px;
+    }
+  }
+  @include g.forSp { padding-top: 41.5px;}
+
+  h2 {
+    letter-spacing: 0.21em;
+    margin-bottom: 26px;
+
+    @include g.forSp { margin-bottom: 9.5px;}
+  }
+  
+  .service_wrap {
+    margin-top: 26px;
+    margin-bottom: 26px;
+    display: flex;
+    justify-content: space-between;
+    @include g.forSpTab { display: none;}
+  }
+
+  .rel_btn { 
+    margin-left: 8px;
+    @include g.forSp {
+      margin-left: 0;
+    }
+  }
+
+  .fadeUpTrigger {
+    &:first-child { animation-delay: 0.1s;}
+    &:nth-child(2) { animation-delay: 0.2s;}
+    &:nth-child(3) { animation-delay: 0.3s;}
+    &.rel_btn { animation-delay: 0.4s;}
+  }
+}
+// service
+
+// bg_wrap
+.bg_wrap {
+  background-image: url("../img/pc/deco_head.png"), url("../img/pc/deco_bottom.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top 0 left 0, top 1075.5px right 0;
+
+  @include g.forSp {
+    background-image: url("../img/sp/deco_head.png"), url("../img/sp/deco_bottom.png");
+    background-position: top 35px left 0, top 1540px right 0;
+    background-size: 34.3%, 31.5%;
+  }
+}
+  //attempt
+  .attempt {
+    padding-top: 83px;
+    padding-bottom: 66px;
+
+    @include g.forSp { padding-top: 28.5px;}
+
+    .attempt_wrap { 
+      margin-top: 32px;
+
+      @include g.forSp { margin-top: 35px;}
+    }
+  }
+  //attempt
+
+  // news
+  .news {
+    padding-top: 83px;
+    padding-bottom: 66px;
+    text-align: center;
+
+    @include g.forSp {
+      padding-top: 2.5px;
+    }
+
+    ul {
+      margin-top: 32px;
+      margin-bottom: 31px;
+      text-align: left;
+
+      @include g.forSp { 
+        margin-top: 16px; 
+        margin-bottom: 28px;
+        padding-top: 3px;
+      }
+
+      li {
+        padding-top: 17px;
+        padding-bottom: 15px;
+        border-bottom: 2px dashed #eee;
+        @include g.forSp {
+          padding-top: 15px;
+          p {
+            font-size: 11px;
+            line-height: 20px;
+            word-break: break-all;
+          }
+        }
+
+        &:first-child { padding-top: 0;}
+
+        & a:hover { text-decoration: underline; opacity: g.$opacity;}
+      }
+    }
+    
+    h3 {
+      font-size: 16px;
+      font-family: g.$ff-sans;
+      letter-spacing: 0.17em;
+      margin-bottom: 17px;
+
+      time { font-size: 14px; margin-right: 20px;}
+
+      @include g.forSp { 
+        font-size: 14px;
+        margin-bottom: 6px;
+        line-height: 1.23em;
+        
+        time {
+          font-size: 10px; 
+          display: block;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .fadeUpTrigger {
+      &:first-child { animation-delay: 0.1s;}
+      &:nth-child(2) { animation-delay: 0.2s;}
+      &:nth-child(3) { animation-delay: 0.3s;}
+      &:nth-child(4) { animation-delay: 0.4s;}
+      &.rel_btn { animation-delay: 0.5s;}
+    }
+  }
+  // news
+
+  // customer
+  .customer {
+    padding-top: 85px;
+    padding-bottom: 83px;
+
+    @include g.forSp { padding-top: 3px; padding-bottom: 68.5px;}
+
+    &_wrap { 
+      margin-top: 31px;
+      @include g.forSp {
+        margin-top: 30px;
+        .flex_item_2 {
+          padding: 0;
+
+          img { margin-bottom: 8.5px !important;}
+        }
+      }
+    }
+
+    &_first_item {
+      position: relative; 
+      margin-bottom: 36px;
+
+      @include g.forSp { margin-bottom: 30px;}
+
+      img { 
+        width: 100%;
+        @include g.forTab {
+          &:first-child { display: none;}
+          &:nth-child(2) { display: block !important;}
+        }
+      }
+
+      .first_item_text {
+        width: 269px;
+        position: absolute;
+        top: 37px;
+        right: 34px;
+        
+        @include g.forSpTab {
+          width: 100%;
+          padding: 23px 14px 25px 23px;
+          box-sizing: border-box;
+          position: initial;
+          background-color: #fafafa;
+        }
+
+        p { 
+          margin-bottom: 42px;
+          @include g.forTab { margin-bottom: 1em;}
+
+          @include g.forSp {
+            font-size: 13px;
+            line-height: 24px;
+            margin-bottom: 9px;
+          }
+        }
+      }
+    }
+  }
+  // customer
+// bg_wrap
+
+// question
+.question {
+  padding-top: 72px;
+  padding-bottom: 168px;
+  text-align: center;
+
+  @include g.forSp {
+    padding-top: 1px;
+    padding-bottom: 50px;
+  }
+
+  dl {
+    margin-top: 24.5px;
+    margin-bottom: 30px;
+    text-align: left;
+    @include g.forSp {
+      margin-top: 34px;
+      margin-bottom: 28.5px;
+    }
+  }
+
+  .dl_item {
+    padding-top: 13px;
+    padding-bottom: 13.5px;
+    border-bottom: 2px dashed #eee;
+
+    &:first-child { padding-top: 0;}
+
+    @include g.forSp {
+      padding-top: 18.5px;
+      padding-bottom: 21px;
+    }
+  }
+
+  dt {
+    font-family: g.$ff-sans;
+    font-weight: g.$fw-bd;
+    letter-spacing: 0.17em;
+    margin-bottom: 17px;
+
+    @include g.forSp {
+      font-size: 13px;
+      margin: 0px 8px 7px 4.5px;
+      padding-left: 32px;
+      text-indent: -38px;
+      line-height: 18px;
+    }
+
+    &::before {
+      content: 'Q';
+      font-size: 24px;
+      color: g.$cr-m;
+      margin-right: 10px;
+      @include g.forSp {
+        font-size: 32px;
+        margin-right: 11px;
+        vertical-align: top;
+      }
+    }
+  }
+
+  dd { 
+    font-size: 14px;
+    font-family: g.$ff-sans;
+    letter-spacing: 0.15em;
+    line-height: 1.75em;
+
+    @include g.forSp {
+      font-size: 11px;
+      line-height: 20px;
+      letter-spacing: 0.155em;
+    }
+  }
+
+  .fadeUpTrigger {
+    &:first-child { animation-delay: 0.1s;}
+    &:nth-child(2) { animation-delay: 0.2s;}
+    &:nth-child(3) { animation-delay: 0.3s;}
+    &:nth-child(4) { animation-delay: 0.4s;}
+    &:nth-child(5) { animation-delay: 0.3s;}
+    &:nth-child(6) { animation-delay: 0.4s;}
+    &.rel_btn { animation-delay: 0.5s;}
+  }
+}
+// question
+// main

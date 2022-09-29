@@ -1,0 +1,19 @@
+@use "../global" as g;
+
+// top-page.scss(service)
+.service .slider {
+  max-width: 1024px;
+  width: 100%;
+  margin: 30px auto 26px;
+
+  .slick-slide{
+    margin: 0 15px;
+
+    img { width: 100%; height: auto;}
+  }
+
+  &.fadeUpTrigger {
+    animation-delay: 0.4s;
+  }
+}
+// top-page.scss(service)
